@@ -1,0 +1,22 @@
+{
+    "name": "webfactorybulgaria/comments",
+    "description": "",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Doncho Petrov",
+            "email": "doncho.wf@gmail.com"
+        }
+    ],
+    "require": {
+        "webfactorybulgaria/core": "~4.1.0",
+        "webfactorybulgaria/reasons": "~4.1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "TypiCMS\\Modules\\Comments\\": "src/"
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
