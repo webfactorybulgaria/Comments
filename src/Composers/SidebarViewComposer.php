@@ -6,7 +6,6 @@ use Illuminate\Contracts\View\View;
 use Illuminate\Support\Facades\Gate;
 use Maatwebsite\Sidebar\SidebarGroup;
 use Maatwebsite\Sidebar\SidebarItem;
-use TypiCMS\Modules\Core\Shells\Composers\BaseSidebarViewComposer;
 
 class SidebarViewComposer
 {
@@ -18,7 +17,7 @@ class SidebarViewComposer
                 $item->icon = config('typicms.comments.sidebar.icon', 'icon fa fa-fw fa-file-photo-o');
                 $item->weight = config('typicms.comments.sidebar.weight');
                 $item->route('admin::index-comments');
-                $item->append('admin::create-file');
+                //$item->append('admin::create-file');
                 $item->authorize(
                     Gate::allows('index-comments')
                 );
