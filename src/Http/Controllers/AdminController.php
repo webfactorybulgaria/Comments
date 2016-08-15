@@ -2,11 +2,10 @@
 
 namespace TypiCMS\Modules\Comments\Http\Controllers;
 
-use TypiCMS\Modules\Core\Http\Controllers\BaseAdminController;
-use TypiCMS\Modules\Comments\Http\Requests\FormRequest;
-use TypiCMS\Modules\Comments\Models\Comment;
-use TypiCMS\Modules\Comments\Repositories\CommentInterface;
-use Users;
+use TypiCMS\Modules\Core\Shells\Http\Controllers\BaseAdminController;
+use TypiCMS\Modules\Comments\Shells\Http\Requests\FormRequest;
+use TypiCMS\Modules\Comments\Shells\Models\Comment;
+use TypiCMS\Modules\Comments\Shells\Repositories\CommentInterface;
 use Request;
 
 class AdminController extends BaseAdminController
@@ -41,7 +40,7 @@ class AdminController extends BaseAdminController
     /**
      * Edit form for the specified resource.
      *
-     * @param \TypiCMS\Modules\Comments\Models\Comment $comment
+     * @param \TypiCMS\Modules\Comments\Shells\Models\Comment $comment
      *
      * @return \Illuminate\View\View
      */
@@ -58,7 +57,7 @@ class AdminController extends BaseAdminController
     /**
      * Store a newly created resource in storage.
      *
-     * @param \TypiCMS\Modules\Comments\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Comments\Shells\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */
@@ -72,8 +71,8 @@ class AdminController extends BaseAdminController
     /**
      * Update the specified resource in storage.
      *
-     * @param \TypiCMS\Modules\Comments\Models\Comment            $comment
-     * @param \TypiCMS\Modules\Comments\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Comments\Shells\Models\Comment            $comment
+     * @param \TypiCMS\Modules\Comments\Shells\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */

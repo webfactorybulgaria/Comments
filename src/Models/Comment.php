@@ -3,15 +3,15 @@
 namespace TypiCMS\Modules\Comments\Models;
 
 use Laracasts\Presenter\PresentableTrait;
-use TypiCMS\Modules\Core\Models\Base;
-use TypiCMS\Modules\History\Traits\Historable;
+use TypiCMS\Modules\Core\Shells\Models\Base;
+use TypiCMS\Modules\History\Shells\Traits\Historable;
 
 class Comment extends Base
 {
     use Historable;
     use PresentableTrait;
 
-    protected $presenter = 'TypiCMS\Modules\Comments\Presenters\ModulePresenter';
+    protected $presenter = 'TypiCMS\Modules\Comments\Shells\Presenters\ModulePresenter';
 
     /**
      * Declare any properties that should be hidden from JSON Serialization.
@@ -45,7 +45,7 @@ class Comment extends Base
      */
     public function user()
     {
-        return $this->belongsTo('TypiCMS\Modules\Users\Models\User');
+        return $this->belongsTo('TypiCMS\Modules\Users\Shells\Models\User');
     }
 
     /**

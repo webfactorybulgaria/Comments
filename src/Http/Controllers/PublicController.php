@@ -2,9 +2,9 @@
 
 namespace TypiCMS\Modules\Comments\Http\Controllers;
 
-use TypiCMS\Modules\Core\Http\Controllers\BasePublicController;
-use TypiCMS\Modules\Comments\Repositories\CommentInterface;
-use TypiCMS\Modules\Comments\Http\Requests\FormRequest;
+use TypiCMS\Modules\Core\Shells\Http\Controllers\BasePublicController;
+use TypiCMS\Modules\Comments\Shells\Repositories\CommentInterface;
+use TypiCMS\Modules\Comments\Shells\Http\Requests\FormRequest;
 use Crypt;
 use Request;
 
@@ -18,7 +18,7 @@ class PublicController extends BasePublicController
     /**
      * Store a newly created resource in storage.
      *
-     * @param \TypiCMS\Modules\Comments\Http\Requests\FormRequest $request
+     * @param \TypiCMS\Modules\Comments\Shells\Http\Requests\FormRequest $request
      *
      * @return \Illuminate\Http\RedirectResponse
      */

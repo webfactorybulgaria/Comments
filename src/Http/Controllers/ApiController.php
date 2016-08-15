@@ -3,9 +3,9 @@
 namespace TypiCMS\Modules\Comments\Http\Controllers;
 
 use Illuminate\Support\Facades\Request;
-use TypiCMS\Modules\Core\Http\Controllers\BaseApiController;
-use TypiCMS\Modules\Comments\Models\Comment;
-use TypiCMS\Modules\Comments\Repositories\CommentInterface as Repository;
+use TypiCMS\Modules\Core\Shells\Http\Controllers\BaseApiController;
+use TypiCMS\Modules\Comments\Shells\Models\Comment;
+use TypiCMS\Modules\Comments\Shells\Repositories\CommentInterface as Repository;
 
 class ApiController extends BaseApiController
 {
@@ -74,7 +74,7 @@ class ApiController extends BaseApiController
     /**
      * Remove the specified resource from storage.
      *
-     * @param \TypiCMS\Modules\Comments\Models\Comment $comment
+     * @param \TypiCMS\Modules\Comments\Shells\Models\Comment $comment
      *
      * @return \Illuminate\Http\JsonResponse
      */

@@ -34,7 +34,7 @@ return [
             */
             'must_approve' => false,
 
-            'repository' => '\TypiCMS\Modules\Comments\Repositories\EloquentComment',
+            'repository' => '\TypiCMS\Modules\Comments\Shells\Repositories\EloquentComment',
         ],
         'disquss' => [
             
@@ -49,7 +49,7 @@ return [
             */
             'short_name' => '',
 
-            'repository' => '\TypiCMS\Modules\Comments\Repositories\DisqussComment',
+            'repository' => '\TypiCMS\Modules\Comments\Shells\Repositories\DisqussComment',
         ],
         'facebook' => [
             'numposts' => 5,
@@ -75,7 +75,7 @@ return [
             */
             'admins' => [],
 
-            'repository' => '\TypiCMS\Modules\Comments\Repositories\FacebookComment',
+            'repository' => '\TypiCMS\Modules\Comments\Shells\Repositories\FacebookComment',
         ]
     ]
 ];

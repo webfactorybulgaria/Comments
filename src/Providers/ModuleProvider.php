@@ -5,13 +5,13 @@ namespace TypiCMS\Modules\Comments\Providers;
 use Illuminate\Foundation\AliasLoader;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
-use TypiCMS\Modules\Core\Facades\TypiCMS;
-use TypiCMS\Modules\Core\Observers\FileObserver;
-use TypiCMS\Modules\Core\Observers\SlugObserver;
-use TypiCMS\Modules\Core\Services\Cache\LaravelCache;
-use TypiCMS\Modules\Comments\Models\Comment;
-use TypiCMS\Modules\Comments\Repositories\CacheDecorator;
-use TypiCMS\Modules\Comments\Repositories\EloquentComment;
+use TypiCMS\Modules\Core\Shells\Facades\TypiCMS;
+use TypiCMS\Modules\Core\Shells\Observers\FileObserver;
+use TypiCMS\Modules\Core\Shells\Observers\SlugObserver;
+use TypiCMS\Modules\Core\Shells\Services\Cache\LaravelCache;
+use TypiCMS\Modules\Comments\Shells\Models\Comment;
+use TypiCMS\Modules\Comments\Shells\Repositories\CacheDecorator;
+use TypiCMS\Modules\Comments\Shells\Repositories\EloquentComment;
 
 class ModuleProvider extends ServiceProvider
 {
@@ -36,7 +36,7 @@ class ModuleProvider extends ServiceProvider
 
         AliasLoader::getInstance()->alias(
             'Comments',
-            'TypiCMS\Modules\Comments\Facades\Facade'
+            'TypiCMS\Modules\Comments\Shells\Facades\Facade'
         );
     }
 
@@ -47,12 +47,12 @@ class ModuleProvider extends ServiceProvider
         /*
          * Register route service provider
          */
-        $app->register('TypiCMS\Modules\Comments\Providers\RouteServiceProvider');
+        $app->register('TypiCMS\Modules\Comments\Shells\Providers\RouteServiceProvider');
 
         /*
          * Sidebar view composer
          */
-        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Comments\Composers\SidebarViewComposer');
+        $app->view->composer('core::admin._sidebar', 'TypiCMS\Modules\Comments\Shells\Composers\SidebarViewComposer');
 
         /*
          * Add the page in the view.
@@ -61,7 +61,7 @@ class ModuleProvider extends ServiceProvider
             $view->page = TypiCMS::getPageLinkedToModule('comments');
         });
 
-        $app->bind('TypiCMS\Modules\Comments\Repositories\CommentInterface', function (Application $app) {
+        $app->bind('TypiCMS\Modules\Comments\Shells\Repositories\CommentInterface', function (Application $app) {
 
             $config = config('typicms.comments');
             $repositoryClass = $config['sources'][$config['source']]['repository'];

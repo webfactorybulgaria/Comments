@@ -2,7 +2,7 @@
 
 namespace TypiCMS\Modules\Comments\Presenters;
 
-use TypiCMS\Modules\Core\Presenters\Presenter;
+use TypiCMS\Modules\Core\Shells\Presenters\Presenter;
 use Reasons;
 use Carbon\Carbon;
 class ModulePresenter extends Presenter
