@@ -63,7 +63,7 @@
                 </tr>
             </thead>
 
-            <tbody>
+            <tbody ng-class="{'table-loading':isLoading}">
                 <tr ng-repeat="model in displayedModels" class="commentrow-@{{model.status}}">
                     <td typi-btn-delete action="delete(model)"></td>
                     <td>
