@@ -8,7 +8,7 @@
 .commentrow-pending {background-color: #ffe88f;}
 .commentrow-spam {background-color: #ef9390;}
 </style>
-<div ng-app="typicms" ng-cloak ng-controller="ListController">
+<div ng-app="typicms" ng-cloak ng-controller="ListController" ng-show="!initializing">
 
     @include('core::admin._button-create', ['module' => 'comments'])
 
